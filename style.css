@@ -19,7 +19,7 @@ body {
     --white: #fff;
 
     --pink: hsl(351, 100%, 86%);
-    --purple: hsl(322, 25%, 72%);
+    --purple: hsl(322, 25%, 62%);
     --brown: hsl(25, 13%, 29%);
 
 
@@ -105,7 +105,7 @@ h3 {
 }
 
 a {
-    color: var(--black);
+    color: var(--purple);
     text-decoration: none;
 
     margin-top: 0.25rem;
@@ -145,7 +145,7 @@ li {
 
 li i {
     font-size: 2rem;
-    color: var(--purple);
+    color: var(--brown);
 }
 
 li.cardapiolink i {
