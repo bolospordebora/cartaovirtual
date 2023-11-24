@@ -176,17 +176,7 @@ button#learnMoreButton {
 .learnMoreModal.open {
     opacity: 1;
     visibility: visible;
-    animation: fadeInAndBorder 0.3s 1 both;
 }
-
-/* @keyframes fadeInAndBorder {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
 
 .learnMoreModal .background {
     backdrop-filter: blur(10px);
@@ -220,6 +210,7 @@ button#learnMoreButton {
     position: absolute;
     bottom: 100%;
     right: 0;
+    user-select: none;
 }
 
 #learnMoreCloseButton i {
