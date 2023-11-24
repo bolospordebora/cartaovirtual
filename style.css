@@ -44,9 +44,8 @@ body {
 
 main {
     width: 375px;
-    height: 812px;
+    height: min(100%, 812px);
     position: relative;
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -56,13 +55,13 @@ main {
 }
 
 .container {
-    /* position: relative; */
     max-width: 250px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
     color: var(--black);
+    border: 1px solid transparent;
 }
 
 .avatar {
@@ -116,13 +115,13 @@ a {
     align-items: center;
 }
 
-p {
+p#userBio {
     margin-top: 2rem;
     font-size: 1rem;
     color: var(--brown);
 }
 
-ul {
+ul#socialLinks {
     margin-top: 3rem;
 
     list-style: none;
@@ -133,6 +132,7 @@ ul {
     flex-direction: column;
 
     justify-content: center;
+    margin-bottom: 16px;
 }
 
 li {
@@ -152,6 +152,91 @@ li.cardapiolink i {
     font-size: 1.6rem;
 }
 
+
+button#learnMoreButton {
+    background-color: transparent;
+    border: transparent;
+    color: var(--purple);
+    cursor: pointer;
+    padding: 10px;
+}
+
+.learnMoreModal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.learnMoreModal.open {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInAndBorder 0.3s 1 both;
+}
+
+/* @keyframes fadeInAndBorder {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+.learnMoreModal .background {
+    backdrop-filter: blur(10px);
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.learnMoreModal .content {
+    width: min(100%, 450px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 5;
+    position: relative;
+}
+
+#learnMoreCloseButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    width: 48px;
+    height: 48px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+}
+
+#learnMoreCloseButton i {
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+.learnMoreModal .item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.learnMoreModal .item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
 
 .cardapio {
     border: 1px solid red;
